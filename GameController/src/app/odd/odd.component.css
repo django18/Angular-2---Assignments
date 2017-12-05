@@ -1,0 +1,14 @@
+p{
+    width: 100px;
+    height: 100px;
+    padding: auto;
+    background-color:firebrick;
+    color:wheat;
+    margin: 5px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    float: left;
+}

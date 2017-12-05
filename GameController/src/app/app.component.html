@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>NPT Controller</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+        <app-game-controller (emitInterval)="onIntervalFired($event)"></app-game-controller>
+    </div>   
+  </div>
+
+  <div class="row">
+      <div class="col-md-12">
+        <h1>Odd Numbers Component:</h1>
+        <app-odd *ngFor="let num of oddNumbers" [oddNum]="num"></app-odd>        
+      </div>   
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Even Numbers Component:</h1>
+          <app-even *ngFor="let num of evenNumbers" [evenNum]="num"></app-even>        
+        </div>   
+      </div>
+  
+</div>
