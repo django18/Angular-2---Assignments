@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+     
+      <!-- <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div class="form-group">
+          <label for="name">E-mail:</label>
+          <input 
+          type="text" 
+          class="form-control"
+          #email="ngModel"
+          ngModel
+          email
+          required
+          name="email">
+          <span class="help-block text-danger" *ngIf="!email.valid && email.touched">Please enter a valid email address.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Password:</label>
+          <input 
+          type="password" 
+          class="form-control"
+          #password="ngModel"
+          ngModel
+          required
+          name="password">
+          <span class="help-block text-danger" *ngIf="!password.valid && password.touched">Please enter a valid password.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Subscription:</label>
+          <select 
+          class="form-control"
+          #subscription="ngModel"
+          [ngModel]=" defaultSubscription "
+          name="subscription">
+          <option value="Basic">Basic</option>
+          <option value="Advanced">Advanced</option>
+          <option value="Pro  ">Pro</option>
+          </select>
+        </div>
+        <button class="btn btn-default btn-primary"
+        [disabled]="!f.valid" type="submit">Submit</button>
+      </form> -->
+
+      <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="projectName">Project Name</label>
+          <input 
+          type="text" 
+          class="form-control"
+          id="projectName"
+          formControlName="ProjectName">
+          <span class="help-block" *ngIf="projectForm.get('ProjectName').errors!=null && projectForm.get('ProjectName').errors['ProjectNameValidate']" >Please enter a valid project name.</span>
+          <span class="help-block" *ngIf="projectForm.get('ProjectName').errors!=null && projectForm.get('ProjectName').errors['required']">Please provide a username.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input 
+          type="text" 
+          class="form-control"
+          id="email"
+          formControlName="Email">
+          <span class="help-block" *ngIf="!projectForm.get('Email').valid && projectForm.get('Email').touched">Please enter a valid email.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="status">Status</label>
+          <select 
+          name="status" 
+          id="status"
+          formControlName="Status">
+            <option *ngFor="let state of status"
+            [value]="state">{{state}}</option>
+          </select>
+        </div>
+        <button class="btn btn-default btn-primary">Submit</button>
+      </form>
+
+    </div>
+  </div>
+</div>
